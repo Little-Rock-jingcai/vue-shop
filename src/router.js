@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import Login from './components/Login.vue'
 import Home from './components/Home.vue'
+import Welcome from './components/Welcome.vue'
+import Users from './components/user/Users.vue'
 
 Vue.use(Router)
 
@@ -13,7 +15,17 @@ const router = new Router({
         //路由规则 当用户访问/login地址时，我们通过component指定要展示的组件Login
         { path: '/login', component: Login },
 
-        { path: '/home', component: Home }
+        {
+            path: '/home',
+            component: Home,
+            //重定向到/welcome地址
+            redirect: '/welcome',
+            //Home的子路由
+            children: [
+                { path: '/welcome', component: Welcome },
+                { path: '/users', component: Users },
+            ]
+        }
     ]
 })
 
