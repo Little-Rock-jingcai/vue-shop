@@ -30,7 +30,10 @@ import {
     Tree,
     Select,
     Option,
-    Cascader
+    Cascader,
+    Alert,
+    Tabs,
+    TabPane
 } from 'element-ui'
 
 
@@ -61,6 +64,9 @@ Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
 
 
 /* 将弹框组件挂载为vue原型上的一个属性并且自己起个名字为$message
