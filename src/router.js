@@ -17,6 +17,8 @@ import Add from './components/goods/Add.vue'
 
 import Order from './components/order/Order.vue'
 
+import Report from './components/report/Report.vue'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -42,6 +44,7 @@ const router = new Router({
                 { path: '/goods', component: GoodList },
                 { path: '/goods/add', component: Add },
                 { path: '/orders', component: Order },
+                { path: '/reports', component: Report },
             ]
         }
     ]
