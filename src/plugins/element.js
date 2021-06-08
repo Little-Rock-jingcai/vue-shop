@@ -39,8 +39,8 @@ import {
     CheckboxGroup,
     Checkbox,
     Upload,
-    // Timeline,
-    // TimelineItem
+    Timeline,
+    TimelineItem
 } from 'element-ui'
 
 Vue.use(Button)
@@ -78,8 +78,8 @@ Vue.use(Step)
 Vue.use(CheckboxGroup)
 Vue.use(Checkbox)
 Vue.use(Upload)
-// Vue.use(Timeline)
-// Vue.use(TimelineItem)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 
 /* 将弹框组件挂载为vue原型上的一个属性并且自己起个名字为$message
 这样每个组件中都能使用this.$message的一系列弹窗方法 */

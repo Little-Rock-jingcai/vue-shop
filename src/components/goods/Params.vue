@@ -201,11 +201,10 @@ export default {
       catelist: [],
       //级联选择框的配置对象
       cateProps: {
-        value: 'cat_id',
-        label: 'cat_name',
-        children: 'children',
         expandTrigger: 'hover',
-        checkStrictly: true,
+        value: 'cat_id', //指定真实选中的值
+        label: 'cat_name', //指定看见的值
+        children: 'children', //父子节点的嵌套属性
       },
       //级联选择框双向绑定到的数组
       selectedCateKeys: [],
@@ -351,9 +350,7 @@ export default {
     editParams() {
       this.$refs.editFormRef.validate(async (valid) => {
         if (!valid) return
-        const {
-          data: res,
-        } = await this.$http.put(
+        const { data: res } = await this.$http.put(
           `categories/${this.cateId}/attributes/${this.editForm.attr_id}`,
           { attr_name: this.editForm.attr_name, attr_sel: this.activeName }
         )

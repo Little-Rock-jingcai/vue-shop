@@ -11,9 +11,13 @@
     <el-card>
       <el-row>
         <el-col :span="8">
-          <el-input placeholder="请输入内容">
+          <el-input placeholder="请输入内容"
+                    v-model="queryInfo.query"
+                    clearable
+                    @clear="getOrderList">
             <el-button slot="append"
-                       icon="el-icon-search"></el-button>
+                       icon="el-icon-search"
+                       @click="getOrderList"></el-button>
           </el-input>
         </el-col>
       </el-row>
@@ -45,7 +49,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作">
-          <template slot-scope="scope">
+          <template>
             <el-button type="primary"
                        icon="el-icon-edit"
                        size="mini"
@@ -101,14 +105,13 @@
                :visible.sync="progressVisible"
                width="50%">
       <!-- 时间线 -->
-      <!-- <el-timeline>
+      <el-timeline>
         <el-timeline-item v-for="(activity, index) in progressInfo"
                           :key="index"
                           :timestamp="activity.time">
           {{activity.context}}
         </el-timeline-item>
-      </el-timeline> -->
-      <span>没有可用的测试单号！</span>
+      </el-timeline>
     </el-dialog>
 
   </div>
@@ -116,6 +119,7 @@
 
 <script>
 import cityData from './citydata'
+import progressInfo from './progressInfo.json'
 
 export default {
   data() {
@@ -152,7 +156,7 @@ export default {
       },
       cityData,
       progressVisible: false,
-      progressInfo: [],
+      progressInfo: progressInfo.data,
     }
   },
   created() {

@@ -196,7 +196,8 @@ export default {
     //验证手机号的规则
     var checkMobile = (rule, value, cb) => {
       //验证手机号的正则表达式
-      const regMobile = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
+      const regMobile =
+        /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
 
       if (regMobile.test(value)) {
         //合法的手机号
@@ -211,7 +212,7 @@ export default {
         //当前的页数
         pagenum: 1,
         //当前每页显示多少条数据
-        pagesize: 2,
+        pagesize: 5,
       },
       userlist: [],
       total: 0,
